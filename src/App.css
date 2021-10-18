@@ -1,6 +1,11 @@
 
+body {
+  background-color: lightgoldenrodyellow;
+}
+
 .App {
   text-align: center;
+  /* width: 100%; */
   /* background-color: lightgoldenrodyellow; */
 }
 
@@ -8,8 +13,28 @@
   /* border: 3px solid gray; */
   background-color: lightskyblue;
   border-radius: 15px;
+  margin-top: 25px;
+  margin-right: 20px;
+  margin-left: 20px;
+  height: 90vh;
 }
 
-.results-container {
-  border: 3px solid gray;
+.tweet-search {
+  margin-left: 30px;
+  margin-top: 15px;
+}
+
+.search-results {
+  background: blanchedalmond;
+  /* border: 3px solid gray; */
+  border-radius: 15px;
+  height: 75vh;
+  margin: 0px;
+  /* width: 100%; */
+  flex: 1;
+  overflow-y: scroll;
+}
+
+.search-bar {
+  /* margin: 10px; */
 }
