@@ -3,7 +3,7 @@ import { Form, Button, Row, Col } from 'react-bootstrap';
 
 export default function Search(props) {
     return (
-        <Form onSubmit={props.handleSearch}>
+        <Form onSubmit={props.handleSearch} className="search-bar">
             <Form.Group>
                 <Form.Label>{props.label}</Form.Label>
                 <Row>
