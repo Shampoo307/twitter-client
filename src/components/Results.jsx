@@ -19,9 +19,9 @@ export default function Results(props) {
             <Card
                 bg="Light"
                 text="dark"
-                style={{ width: '18rem' }}
+                style={{ width: '30rem' }}
                 key={index}
-                className="mb-2"
+                className="mb-2 tweet-card"
             >
                 <Card.Body>
                     <Card.Header>{item.id}</Card.Header>
