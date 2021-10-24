@@ -1,40 +1,54 @@
 
 body {
-  background-color: lightgoldenrodyellow;
+  /* background-color: lightgoldenrodyellow; */
 }
 
 .App {
-  text-align: center;
+  /* text-align: center; */
   /* width: 100%; */
   /* background-color: lightgoldenrodyellow; */
 }
 
 .form-container {
   /* border: 3px solid gray; */
-  background-color: lightskyblue;
-  border-radius: 15px;
+  /* background-color: lightskyblue; */
+  /* border-radius: 15px;
+  border: 3px solid darkslategray; */
   margin-top: 25px;
-  margin-right: 20px;
-  margin-left: 20px;
-  height: 90vh;
+  margin-right: 30px;
+  margin-left: 30px;
+  /* height: 90vh; */
 }
 
 .tweet-search {
-  margin-left: 30px;
-  margin-top: 15px;
+  margin-left: 20px;
+  margin-right: 0;
+  /* margin-top: 15px; */
 }
 
 .search-results {
-  background: blanchedalmond;
+  /* background: blanchedalmond; */
   /* border: 3px solid gray; */
-  border-radius: 15px;
-  height: 75vh;
-  margin: 0px;
+  /* border-radius: 15px; */
+  /* height: 75vh; */
+  /* margin: 0px; */
   /* width: 100%; */
+  margin-top: 10px;
+  height: calc(100vh - 150px);
+  align-content: space-around;
   flex: 1;
   overflow-y: scroll;
 }
 
+.tweet-card {
+  margin: auto;
+}
+
 .search-bar {
+  margin: auto;
+  width: 90%;
+  border-radius: 15px;
+  padding: 10px;
   /* margin: 10px; */
+  background-color: rgba(0, 0, 0, 0.144);
 }
