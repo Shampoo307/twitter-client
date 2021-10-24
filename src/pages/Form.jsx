@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Search from "../components/Search";
 import Results from "../components/Results";
+import Analyses from "../components/Analyses";
 
 export default function Form(props) {
 
@@ -13,22 +14,32 @@ export default function Form(props) {
         setSearchValue(event.target.value);
     };
 
+    const analyseTweets = async (tweets) => {
+        tweets.forEach(async tweet => {
+            const options = {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(tweet)
+            }
+            const tweetSentimentResult = await fetch('/nlp/s-analysis', options).then(res => res.json());
+            setTweetSentiments([...tweetSentiments, tweetSentimentResult]);
+        })
+    }
+
     const handleSearch = async (event) => {
         event.preventDefault();
         // Retrieve tweets based on search query
         const tweets = await fetch(`/search/${searchValue}`).then(res => res.json());
         setSearchResults(tweets.data);
 
-        const options = {
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(tweets.data)
-        }
+        
+        console.log('aegae', tweets.data);
         // perform sentiment analysis on tweets
-        const tweetSentimentResult = await fetch('/nlp/s-analysis', options).then(res => res.json());
-        setTweetSentiments(tweetSentimentResult);
+        analyseTweets(tweets.data);
+        // const tweetSentimentResult = await fetch('/nlp/s-analysis', options).then(res => res.json());
+        // setTweetSentiments(tweetSentimentResult);
     };
 
 
@@ -53,6 +64,7 @@ export default function Form(props) {
                     </Row>
                 </Col>
                 <Col xs lg="8">
+                    <Analyses />
                 </Col>
             </Row>
         </Container>
