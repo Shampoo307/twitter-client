@@ -7,19 +7,28 @@ export default function Form(props) {
 
     const [ searchValue, setSearchValue ] = useState('');
     const [ searchResults, setSearchResults ] = useState([]);
+    const [ tweetSentiments, setTweetSentiments ] = useState([]);
 
     const handleSearchChange = (event) => {
         setSearchValue(event.target.value);
     };
 
-    const handleSearch = (event) => {
+    const handleSearch = async (event) => {
         event.preventDefault();
-        // MAKE SEARCH (call server endpoint)
-        fetch(`/search/${searchValue}`)
-            .then(res => res.json())
-            .then(res => {
-                setSearchResults(res.data);
-            });
+        // Retrieve tweets based on search query
+        const tweets = await fetch(`/search/${searchValue}`).then(res => res.json());
+        setSearchResults(tweets.data);
+
+        const options = {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(tweets.data)
+        }
+        // perform sentiment analysis on tweets
+        const tweetSentimentResult = await fetch('/nlp/s-analysis', options).then(res => res.json());
+        setTweetSentiments(tweetSentimentResult);
     };
 
 
