@@ -24,7 +24,9 @@ export default function Form(props) {
                 body: JSON.stringify(tweet)
             }
             const tweetSentimentResult = await fetch('/nlp/s-analysis', options).then(res => res.json());
+        
             setTweetSentiments([...tweetSentiments, tweetSentimentResult]);
+            console.log(tweetSentimentResult);           
         })
     }
 
@@ -35,7 +37,7 @@ export default function Form(props) {
         setSearchResults(tweets.data);
 
         
-        console.log('aegae', tweets.data);
+        console.log('aegae', tweets.data);        
         // perform sentiment analysis on tweets
         analyseTweets(tweets.data);
         // const tweetSentimentResult = await fetch('/nlp/s-analysis', options).then(res => res.json());
@@ -64,7 +66,7 @@ export default function Form(props) {
                     </Row>
                 </Col>
                 <Col xs lg="8">
-                    <Analyses />
+                    <Analyses Analyses analysis={tweetSentiments}/>
                 </Col>
             </Row>
         </Container>
