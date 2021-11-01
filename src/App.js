@@ -1,10 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
-import Form from './pages/Form';
+import FormNew from './pages/Form-new';
 
 function App() {
   return (
-    <Form />
+    <FormNew />
   );
 }
 

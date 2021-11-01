@@ -4,10 +4,12 @@ import ScoreTotal from "./ScoreTotal";
 // import Chart from 'chart.js/auto';
 
 export default function Analyses (props) {
-
+	const { tweets } = props;
+	const aggregate = tweets.reduce((acc, next) => acc = next.sentiment, 0);
+	
 	return (
 		<div>
-			<ScoreTotal total={props.sentiment}/>
+			<ScoreTotal total={aggregate}/>
 		</div>
 	)
 }
