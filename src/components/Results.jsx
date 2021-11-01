@@ -19,12 +19,12 @@ export default function Results(props) {
             <Card
                 bg="Light"
                 text="dark"
-                style={{ width: '30rem' }}
+                style={{ width: '25rem' }}
                 key={index}
-                className="mb-2 tweet-card"
+                className="sm-2 tweet-card"
             >
                 <Card.Body>
-                    <Card.Header>{item.id}</Card.Header>
+                    <Card.Header>Created on: {item.created_at}</Card.Header>
                     <Card.Text>{item.text}</Card.Text>
                 </Card.Body>
             </Card>

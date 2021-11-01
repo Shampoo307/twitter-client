@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row, Col, ListGroup, Card } from "react-bootstrap";
 import ScoreTotal from "./ScoreTotal";
+import TweetLineChart from './TweetLineChart';
 // import Chart from 'chart.js/auto';
 
 export default function Analyses (props) {
@@ -12,8 +13,13 @@ export default function Analyses (props) {
 	}, [props.tweets])
 	
 	return (
-		<div>
-			<ScoreTotal total={aggregate}/>
+		<div className="analysis-container-div">
+			<Row>
+				<ScoreTotal total={aggregate} />
+			</Row>
+			<Row>
+				<TweetLineChart tweets={props.tweets} />
+			</Row>
 		</div>
 	)
 }

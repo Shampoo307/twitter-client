@@ -6,7 +6,7 @@ export default function ScoreTotal(props) {
     
 
     return (
-        <div>
+        <div className="score-total-div">
             <Row>
                 <h1>Analyses</h1>
             </Row>

@@ -42,13 +42,43 @@ body {
 
 .tweet-card {
   margin: auto;
+  background: rgba(0,0,0,.144);
+  /* space below card */
+  margin-bottom: 10px;
 }
-
+.tweet-card-chart {
+  margin: auto;
+  background: rgba(0, 0, 0, 0.199);
+}
+.card-header {
+  /* title text */
+  color: white;
+  /* dark title banner */
+  background-color: #343a40;
+}
+.card-body {
+  /* remove space around header banner */
+  padding: 0px !important;
+}
+.card-text {
+  /* give a dash of space around inside text */
+  padding: 5px !important;
+}
 .search-bar {
   margin: auto;
   width: 90%;
-  border-radius: 15px;
+  border-radius: 10px;
   padding: 10px;
   /* margin: 10px; */
   background-color: rgba(0, 0, 0, 0.144);
+}
+
+
+.analysis-container-div {
+  /* margin-left: 20px; */
+}
+
+.score-total-div {
+  /* align 'Analyses' header with chart (otherwise way too far left) */
+  margin-left: 100px;
 }

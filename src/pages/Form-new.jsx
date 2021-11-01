@@ -43,7 +43,7 @@ export default function FormNew(props) {
     };
 
     return (
-        <Container className="form-container" fluid="lg">
+        <Container className="form-container" fluid="sm">
         <Row>
             <Col className="tweet-search">
                 <Row>
@@ -60,7 +60,7 @@ export default function FormNew(props) {
                     { tweetsList && <Results results={tweetsList} /> }
                 </Row>
             </Col>
-            <Col xs lg="8">
+            <Col xs lg="9" className="analyses-column">
                 <Analyses tweets={tweetsList} />
             </Col>
         </Row>
