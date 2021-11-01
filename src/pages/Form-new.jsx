@@ -38,6 +38,7 @@ export default function FormNew(props) {
     const sendData = (event) => {
         // Stop page reload on 'Search'........
         event.preventDefault();
+        setTweetsList([]);
         // Send search query
         ws.send(searchBarValue)
     };

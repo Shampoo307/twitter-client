@@ -9,13 +9,13 @@ export default function Analyses (props) {
 
 	useEffect(() => {
 		const tweets = props.tweets;
-		setAggregate(tweets.reduce((acc, next) => acc + next.sentiment, 0));
+		setAggregate((tweets.reduce((acc, next) => acc + next.sentiment, 0) / tweets.length));
 	}, [props.tweets])
 	
 	return (
 		<div className="analysis-container-div">
 			<Row>
-				<ScoreTotal total={aggregate} />
+				<ScoreTotal total={aggregate} numTweets={props.tweets.length} />
 			</Row>
 			<Row>
 				<TweetLineChart tweets={props.tweets} />

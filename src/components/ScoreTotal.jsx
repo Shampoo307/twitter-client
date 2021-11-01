@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Form, Button, Row, Col } from 'react-bootstrap';
+import { Form, Button, Row, Col, Alert } from 'react-bootstrap';
 
 export default function ScoreTotal(props) {
 
@@ -15,7 +15,7 @@ export default function ScoreTotal(props) {
                     <p>The overall sentiment analysis can range between -5 and +5; the lower the score the more negative, and the higher, the more positive.</p>
                 </Col>
                 <Col>
-                    <p>{props.total}</p>
+                    <Alert variant="primary" style={{ fontSize: '1.2rem' }}>Overall Sentiment Score from {props.numTweets} tweets: {props.total}</Alert>
                 </Col>
             </Row>
         </div>
